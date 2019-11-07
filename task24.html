@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<body onload="myFunction()" style="background:darkblue;color:white">
+
+<p>Click the button to get the sum of the rounded numbers in the array.</p>
+<button onclick="myFunction1()">Ascending</button>
+<button onclick="myFunction2()">Desending</button>
+<p>Array values before sort <span id="demo"></span></p>
+
+
+<p id="demo1"></p>
+
+<script>
+
+var numbers = [15, 23, 11, 47, 55,22,56,112,99,999,456,555];
+
+function myFunction() {
+
+	for (i = 0; i< numbers.length; i++)
+	{
+	   var x =  numbers[i]; 
+	   document.getElementById("demo").innerHTML += " "+x; 
+	  
+	  <!-- document.getElementById("demo").innerHTML = " "+numbers; -->
+
+	}
+
+ 
+}
+
+function myFunction1() {
+
+	for (i = 0; i< numbers.length; i++)
+	{
+		for (j = i+1; j< numbers.length; j++){
+		
+		if(numbers[i]>numbers[j]){
+		
+			var temp = numbers[j];
+			numbers[j]=numbers[i];
+			numbers[i]=temp;
+		
+
+		
+		}
+		
+		
+		}
+
+	}
+
+	var x =  numbers;
+  document.getElementById("demo1").innerHTML = " "+x;
+ 
+}
+
+function myFunction2() {
+
+	for (i = 0; i< numbers.length; i++)
+	{
+		for (j = i+1; j< numbers.length; j++){
+		
+		if(numbers[i]<numbers[j]){
+		
+			var temp = numbers[j];
+			numbers[j]=numbers[i];
+			numbers[i]=temp;
+		
+
+		
+		}
+		
+		
+		}
+
+	}
+
+	var x =  numbers;
+  document.getElementById("demo1").innerHTML = " "+x;
+ 
+}
+
+
+</script>
+
+</body>
+</html>
